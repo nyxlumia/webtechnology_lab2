@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Майкл Джексон</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Майкл Джексон</h1>
+    <nav>
+        <ul>
+            
+            <li><a href="index.html">ГОЛОВНА</a></li>
+            <li><a href="contact.html">КОНТАКТИ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <hr>
+
+    <section class="forms-container">
+        
+       
+        <div class="form-box registration-box">
+            <h2>Форма реєстрації</h2>
+            <form action="#" method="POST" class="custom-form">
+                <div class="form-row">
+                    <label for="avatar-upload" class="avatar-placeholder">
+    <span id="avatar-text">👤</span>
+    <input type="file" id="avatar-upload" accept="image/*" style="display: none;" onchange="document.getElementById('avatar-text').innerText = '✓';">
+</label>
+                    
+                    <div class="form-group">
+                        <label for="reg-name">Ім'я</label>
+                        <input type="text" id="reg-name" name="name" placeholder="Ім'я" required pattern="[A-Za-zА-Яа-яІіЇїЄє]{2,}">
+                        
+                        <label for="reg-surname">Прізвище</label>
+                        <input type="text" id="reg-surname" name="surname" placeholder="Прізвище" required>
+                        
+                        <label>Стать</label>
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="male" checked>
+                            <label for="male">Чоловіча</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Жіноча</label>
+                        </div>
+                        
+                        <label for="reg-age">Вік</label>
+                        <input type="number" id="reg-age" name="age" min="1" max="100" placeholder="21" required>
+                        
+                        <label for="reg-dob">Дата народження</label>
+                        <input type="date" id="reg-dob" name="dob" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-country">Країна проживання</label>
+                        <select id="reg-country" name="country" required>
+                            <option value="">Оберіть країну</option>
+                            <option value="ua">Україна</option>
+                            <option value="us">США</option>
+                            <option value="uk">Великобританія</option>
+                        </select>
+                        
+                        <label for="reg-phone">Номер телефону</label>
+                        <input type="tel" id="reg-phone" name="phone" placeholder="+380XXXXXXXXX" required>
+                        
+                        <label for="reg-social">Соцмережа</label>
+                        <input type="url" id="reg-social" name="social" placeholder="Посилання на соц.мережу">
+                        
+                        <label for="reg-email">Електронна пошта</label>
+                        <input type="email" id="reg-email" name="email" placeholder="Email" required>
+                        
+                        <label for="reg-pass">Пароль</label>
+                        <input type="password" id="reg-pass" name="password" placeholder="Пароль" minlength="6" required>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Чи згодні Ви з умовами?</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary float-left">Зареєструватися</button>
+                    <button type="reset" class="btn-secondary">Відміна</button>
+                </div>
+            </form>
+        </div>
+
+     
+        <div class="modal-trigger">
+            <button class="btn-primary" onclick="document.getElementById('loginModal').style.display='block'">Відкрити форму входу (Модальне вікно)</button>
+        </div>
+
+        
+        <div class="form-box login-box" id="loginModal">
+            <span class="close-btn" onclick="document.getElementById('loginModal').style.display='none'">×</span>
+            <h2>Форма входу</h2>
+            <form action="#" method="POST" class="custom-form">
+                <div class="form-group">
+                    <label for="login-email">Логін (Email)</label>
+                    <input type="email" id="login-email" name="email" required>
+                    
+                    <label for="login-pass">Пароль</label>
+                    <input type="password" id="login-pass" name="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Вхід</button>
+            </form>
+        </div>
+
+        
+        <div class="form-box feedback-box">
+            <h2>Форма зворотного зв'язку</h2>
+            <form action="#" method="POST" class="custom-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fb-name">Ім'я</label>
+                        <input type="text" id="fb-name" name="name" required>
+                        
+                        <label for="fb-email">Ел. пошта</label>
+                        <input type="email" id="fb-email" name="email" required>
+                        
+                        <label for="fb-subject">Тема повідомлення</label>
+                        <input type="text" id="fb-subject" name="subject" required>
+                        
+                        <button type="submit" class="btn-primary" style="margin-top: 20px;">Відправити</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fb-message">Повідомлення</label>
+                        <textarea id="fb-message" name="message" rows="8" required></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        
+        <div class="social-links">
+            <h3>Посилання на соц.мережі</h3>
+            <div class="social-circles">
+                <a href="https://www.youtube.com/@michaeljackson" target="_blank" class="circle" title="YouTube"></a>
+                <a href="https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm" target="_blank" class="circle" title="Spotify"></a>
+                <a href="https://www.instagram.com/michaeljackson/" target="_blank" class="circle" title="Instagram"></a>
+            </div>
+        </div>
+        
+        
+        <div class="arrow-up">
+            <a href="#">⬆</a>
+        </div>
+
+    </section>
+</main>
+
+<footer id="contact">
+    <p>
+        <span>Copyright &copy; 2026</span>
+        <span>mob. +380 xx xxx-xx-xx</span>
+        <span>email: tsesarska@gmail.com</span>
+        <span>skype: live:tsesarska</span>
+    </p>
+</footer>
+
+</body>
+</html>
