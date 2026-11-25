@@ -166,22 +166,28 @@ blockquote cite {
 }
 
 .photo-grid {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     padding: 10px 0;
 }
 
 .photo-grid figure {
-    flex: 1;
     text-align: center;
+    margin: 0;
 }
 
 .photo-grid img {
     width: 100%;
-    height: auto;
+    height: 100%;
     max-height: 250px;
+    object-fit: cover;
     border: 1px solid #000000;
+}
+
+.photo-grid img[usemap] { /* налаштування для зображення 4 */
+    object-fit: contain; 
+    background-color: #f4f6f7; /* адаптація до розмірів контейнера */
 }
 
 table {
@@ -493,10 +499,135 @@ footer p span:last-child {
 .arrow-up:hover {
     background-color: #3b559e;
 }
+/* Планшети */
+@media (max-width: 1024px) {
+    header, main, footer {
+        padding: 20px 25px;
+    }
 
-/* Адаптивність */
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+/* Мобільні */
 @media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    header, main, footer {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* вертикальна навігація */
+    header nav ul li {
+        display: block;
+        border-right: none;
+        border-bottom: 1px solid #000000;
+    }
+
+    header nav ul li a {
+        display: block;
+        border-right: none;
+        padding: 10px 5px;
+    }
+
+    header nav ul li:first-child a {
+        border-left: none;
+    }
+
+    #biography figure,
+    main article figure {
+        float: none;
+        max-width: 100%;
+        margin: 0 auto 15px;
+    }
+
+    /* Таблиця — горизонтальний скрол */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Форми */
     .form-row {
         flex-direction: column;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .float-left {
+        float: none;
+        margin-right: 0;
+    }
+
+    /* Модальне вікно */
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    footer p span {
+        display: block;
+        border-right: none;
+        border-bottom: 1px solid #000000;
+        padding: 5px 0;
+    }
+
+    footer p span:last-child {
+        border-bottom: none;
+    }
+}
+
+/*Телефони*/
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    main h2 {
+        font-size: 1.3rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar-placeholder {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .arrow-up {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .arrow-up a {
+        font-size: 18px;
     }
 }
